@@ -38,7 +38,7 @@
               },
               {
                 "name": "HOST",
-                "value": "localhost"
+                "value": "0.0.0.0"
             }
           ],
           "environmentFiles": [],
