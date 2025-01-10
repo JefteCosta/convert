@@ -7,5 +7,5 @@ ENV PM2_SECRET_KEY k2xwdc00z4al044
 RUN npm install
 COPY . .
 RUN npm run build
-EXPOSE 3000
+EXPOSE 3333
 CMD ["pm2-runtime", "build/ace", "--", "serve", "--watch"]
