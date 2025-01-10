@@ -9,4 +9,4 @@ COPY . .
 RUN npm run build
 EXPOSE 3333
 RUN printenv
-CMD ["pm2-runtime", "build/server.js"]
+CMD ["pm2-runtime", "build/bin/server.js"]
