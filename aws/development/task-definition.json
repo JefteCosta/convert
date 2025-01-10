@@ -1,0 +1,165 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": "arn:aws:iam::625380864118:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "environmentFiles": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/td-videoconvert-api",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": [],
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "protocol": "tcp",
+          "containerPort": 3000
+        }
+      ],
+      "command": [],
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [
+        {
+          "name": "CLIENT_URL",
+          "value": "https://homol-api.jeftecosta.com.br"
+        },
+        {
+          "name": "DATABASE_HOST",
+          "value": "app-omnichannel.cjtwssy8qxvv.us-east-1.rds.amazonaws.com"
+        },
+        {
+          "name": "DATABASE_NAME",
+          "value": "QUITACOM"
+        },
+        {
+          "name": "DATABASE_PASS",
+          "value": "\"EtmCaOce8&z#Lu\""
+        },
+        {
+          "name": "DATABASE_PORT",
+          "value": "3306"
+        },
+        {
+          "name": "DATABASE_USER",
+          "value": "admin"
+        },
+        {
+          "name": "PORT",
+          "value": "8080"
+        },
+        {
+          "name": "SECRET",
+          "value": "gh23kpsdo4213ok2bnj21b"
+        },
+        {
+          "name": "TOKEN",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2NzM1NDk0OTUsImV4cCI6MTgzMTMzNDI1NX0.qeBtYrx_ovelbMVorCuwLqdCCmq24HPS3GbBsf7a9xo"
+        }
+      ],
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "secrets": null,
+      "dockerSecurityOptions": null,
+      "memory": null,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "625380864118.dkr.ecr.us-east-1.amazonaws.com/videoconvert-api:latest",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "videoconvert-api-container"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "512",
+  "taskRoleArn": null,
+  "compatibilities": [
+    "EC2",
+    "FARGATE"
+  ],
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:625380864118:task-definition/td-videoconvert-api:2",
+  "family": "td-videoconvert-api",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.task-eni"
+    }
+  ],
+  "pidMode": null,
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX",
+    "cpuArchitecture": null
+  },
+  "cpu": "256",
+  "revision": 2,
+  "status": "ACTIVE",
+  "inferenceAccelerators": null,
+  "proxyConfiguration": null,
+  "volumes": []
+}
