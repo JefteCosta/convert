@@ -1,0 +1,123 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:626635440163:task-definition/td-convet-api:2",
+  "containerDefinitions": [
+      {
+          "name": "videoconvert-api-container",
+          "image": "626635440163.dkr.ecr.us-east-1.amazonaws.com/convert-api",
+          "cpu": 0,
+          "portMappings": [
+              {
+                  "name": "videoconvert-api-container-3333-tcp",
+                  "containerPort": 3333,
+                  "hostPort": 3333,
+                  "protocol": "tcp",
+                  "appProtocol": "http"
+              }
+          ],
+          "essential": true,
+          "environment": [
+              {
+                  "name": "NODE_ENV",
+                  "value": "development"
+              },
+              {
+                  "name": "PORT",
+                  "value": "3333"
+              },
+              {
+                  "name": "APP_KEY",
+                  "value": "2eTu8s8mG6kLrPVBKzuduDW_QiZOgOYl"
+              },
+              {
+                  "name": "LOG_LEVEL",
+                  "value": "info"
+              },
+              {
+                  "name": "TZ",
+                  "value": "America/Sao_Paulo"
+              },
+              {
+                "name": "HOST",
+                "value": "0.0.0.0"
+            }
+          ],
+          "environmentFiles": [],
+          "mountPoints": [],
+          "volumesFrom": [],
+          "ulimits": [],
+          "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                  "awslogs-group": "/ecs/td-convet-api",
+                  "mode": "non-blocking",
+                  "awslogs-create-group": "true",
+                  "max-buffer-size": "25m",
+                  "awslogs-region": "us-east-1",
+                  "awslogs-stream-prefix": "ecs"
+              },
+              "secretOptions": []
+          },
+          "systemControls": []
+      }
+  ],
+  "family": "td-convet-api",
+  "taskRoleArn": "arn:aws:iam::626635440163:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::626635440163:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "revision": 2,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+      {
+          "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+      },
+      {
+          "name": "ecs.capability.execution-role-awslogs"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.ecr-auth"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.task-iam-role"
+      },
+      {
+          "name": "ecs.capability.fault-injection"
+      },
+      {
+          "name": "ecs.capability.execution-role-ecr-pull"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+      },
+      {
+          "name": "ecs.capability.task-eni"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+      }
+  ],
+  "placementConstraints": [],
+  "compatibilities": [
+      "EC2",
+      "FARGATE"
+  ],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "1024",
+  "runtimePlatform": {
+      "cpuArchitecture": "X86_64",
+      "operatingSystemFamily": "LINUX"
+  },
+  "registeredAt": "2025-01-10T18:25:48.981Z",
+  "registeredBy": "arn:aws:iam::626635440163:user/jefte.costa",
+  "enableFaultInjection": true,
+  "tags": []
+}
