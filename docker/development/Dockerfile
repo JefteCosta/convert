@@ -8,4 +8,5 @@ RUN npm install
 COPY . .
 RUN npm run build
 EXPOSE 3333
-CMD ["pm2-runtime", "build/ace", "--", "serve", "--watch"]
+RUN printenv
+CMD ["pm2-runtime", "build/server.js"]
