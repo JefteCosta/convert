@@ -1,5 +1,5 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:626635440163:task-definition/td-convet-api:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:626635440163:task-definition/td-convet-api:2",
   "containerDefinitions": [
       {
           "name": "videoconvert-api-container",
@@ -57,9 +57,10 @@
       }
   ],
   "family": "td-convet-api",
+  "taskRoleArn": "arn:aws:iam::626635440163:role/ecsTaskExecutionRole",
   "executionRoleArn": "arn:aws:iam::626635440163:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 1,
+  "revision": 2,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -77,6 +78,12 @@
       },
       {
           "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.task-iam-role"
+      },
+      {
+          "name": "ecs.capability.fault-injection"
       },
       {
           "name": "ecs.capability.execution-role-ecr-pull"
@@ -105,8 +112,8 @@
       "cpuArchitecture": "X86_64",
       "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2025-01-10T17:10:36.038Z",
+  "registeredAt": "2025-01-10T18:25:48.981Z",
   "registeredBy": "arn:aws:iam::626635440163:user/jefte.costa",
-  "enableFaultInjection": false,
+  "enableFaultInjection": true,
   "tags": []
 }
